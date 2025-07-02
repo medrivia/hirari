@@ -48,6 +48,7 @@
 	"devDependencies": {
 		"@swc/cli": "^0.7.7",
 		"@swc/plugin-transform-imports": "^8.0.3",
+		"@types/bun": "^1.2.17",
 		"es-toolkit": "^1.39.4",
 		"remark-man": "^9.0.0",
 		"remark-parse": "^11.0.0",
