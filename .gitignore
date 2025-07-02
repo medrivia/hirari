@@ -17,3 +17,6 @@ dist
 
 # unused directory
 ..unused
+
+/man/*/*
+!/man/**/*.md

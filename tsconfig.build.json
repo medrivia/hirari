@@ -30,5 +30,6 @@
 		"noUnusedParameters": false,
 		"noPropertyAccessFromIndexSignature": false,
 	},
-	"include": ["src/v*/**/*.ts"]
+	"include": ["src/v*/**/*.ts"],
+	"exclude": ["**/*.test.ts", "**/test.ts"]
 }

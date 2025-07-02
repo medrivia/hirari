@@ -38,7 +38,14 @@ jobs:
           registry-url: 'https://registry.npmjs.org/'
           scope: '@medrivia'
       - name: 'Publish to NPM: `hirari`'
+        if: ${{ !github.event.release.prerelease }}
         run: npm publish --provenance --access public
+        env:
+          NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+      - name: 'Publish to NPM: `hirari` (next)'
+        if: ${{ github.event.release.prerelease }}
+        run: npm publish --provenance --access public --tag next
         env:
           NPM_CONFIG_TOKEN: ${{secrets.NPM_TOKEN}}
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

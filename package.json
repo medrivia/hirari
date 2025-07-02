@@ -1,6 +1,6 @@
 {
 	"name": "hirari",
-	"version": "257.0.0",
+	"version": "257.0.0-alpha.0",
 	"description": "🎂 (WIP) A modular visual novel/dialog system with progressive enhancement",
 	"keywords": ["dialog", "dialogue", "narration", "novel", "script", "story", "vn"],
 	"homepage": "https://github.com/medrivia/hirari",
@@ -18,9 +18,18 @@
 		".": "./src/v257/index.ts",
 		"./*": "./src/*/index.ts"
 	},
-	"files": ["dist"],
+	"files": ["dist", "man"],
+	"bin": {
+		"hirari": "./bin/hirari.ts"
+	},
+	"man": ["./man/man1/hirari.1"],
+	"directories": {
+		"bin": "./bin",
+		"man": "./man"
+	},
 	"scripts": {
-		"b": "tsc && swc --strip-leading-paths ./src/v*/ -d ./dist/"
+		"b": "tsc --build tsconfig.build.json && swc --strip-leading-paths ./src/v*/ -d ./dist/",
+		"prepublishOnly": "./man-generate.ts"
 	},
 	"publishConfig": {
 		"main": "./dist/v257/index.js",
@@ -39,6 +48,12 @@
 	"devDependencies": {
 		"@swc/cli": "^0.7.7",
 		"@swc/plugin-transform-imports": "^8.0.3",
-		"es-toolkit": "^1.39.4"
+		"es-toolkit": "^1.39.4",
+		"remark-man": "^9.0.0",
+		"remark-parse": "^11.0.0",
+		"unified": "^11.0.5"
+	},
+	"dependencies": {
+		"@mdrv/m": "^257.1.0"
 	}
 }
