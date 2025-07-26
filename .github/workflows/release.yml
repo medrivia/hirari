@@ -8,7 +8,7 @@ on:
       jsr:
         description: "Publish to JSR"
         type: boolean
-        default: true
+        default: false
       npm:
         description: "Publish to NPM"
         type: boolean
@@ -61,7 +61,9 @@ jobs:
         working-directory: packages/${{ inputs.pkg }}
         run: |
           for symlink in $(find . -maxdepth 1 -type l); do
-          cp -r -f --remove-destination "$(realpath "$symlink")" "$symlink"
+          original="$(realpath "$symlink")"
+          rm $symlink
+          cp -r -f --remove-destination "$original" "$symlink"
           done
       - name: "Fix workspace dependencies"
         run: bun ./scripts/fix-workspace-deps.ts
@@ -105,7 +107,9 @@ jobs:
         working-directory: packages/${{ inputs.pkg }}
         run: |
           for symlink in $(find . -maxdepth 1 -type l); do
-          cp -r -f --remove-destination "$(realpath "$symlink")" "$symlink"
+          original="$(realpath "$symlink")"
+          rm $symlink
+          cp -r -f --remove-destination "$original" "$symlink"
           done
       - uses: actions/setup-node@v4
         with:
