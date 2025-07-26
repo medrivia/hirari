@@ -4,7 +4,7 @@
 	"license": "GPL-3.0",
 	"type": "module",
 	"keywords": [],
-	"description": "Alias for @hirari/core + @hirari/cli",
+	"description": "🎂 (WIP) A modular visual novel/dialog system",
 	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
 	"homepage": "https://github.com/medrivia/hirari",
 	"repository": {
