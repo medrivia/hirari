@@ -1,3 +1,1 @@
-# @hirari/core (WIP)
-
-The main parser (always needed).
+../../README.md
