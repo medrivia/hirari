@@ -1,0 +1,18 @@
+{
+	"name": "@hirari/cli",
+	"include": [
+		"LICENSE",
+		"README.md",
+		"bin/*.{ts,js}",
+		"utils/*.{ts,js}",
+		"man/**/*.[1-9]"
+	],
+	"exclude": [
+		"bun.lock",
+		"dprint.json",
+		"tsdown.config.ts",
+		"src/*.{ts,js}",
+		"res/",
+		".github/"
+	]
+}

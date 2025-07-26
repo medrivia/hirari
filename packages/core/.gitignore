@@ -2,7 +2,18 @@
 node_modules
 
 # output
+out
 dist
+*.tgz
+
+# code coverage
+coverage
+*.lcov
+
+# logs
+logs
+_.log
+report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # dotenv environment variable files
 .env
@@ -12,10 +23,12 @@ dist
 .env.local
 
 # caches
+.eslintcache
+.cache
 *.tsbuildinfo
-.swc
 
-# unused directory
-..unused
+# IntelliJ based IDEs
+.idea
 
-tmp/
+# Finder (MacOS) folder config
+.DS_Store

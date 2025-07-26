@@ -1,0 +1,27 @@
+{
+	"name": "hirari",
+	"version": "0.0.1",
+	"license": "GPL-3.0",
+	"type": "module",
+	"keywords": [],
+	"description": "Alias for @hirari/core + @hirari/cli",
+	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
+	"homepage": "https://github.com/medrivia/hirari",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/medrivia/hirari.git"
+	},
+	"bugs": {
+		"url": "https://github.com/medrivia/hirari/issues"
+	},
+	"files": ["./*.{ts,js}"],
+	"main": "./index.ts",
+	"types": "./index.ts",
+	"exports": {
+		".": "./index.ts"
+	},
+	"dependencies": {
+		"@hirari/cli": "workspace:^",
+		"@hirari/core": "workspace:^"
+	}
+}

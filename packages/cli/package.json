@@ -1,0 +1,40 @@
+{
+	"name": "@hirari/cli",
+	"version": "0.0.1",
+	"license": "GPL-3.0",
+	"type": "module",
+	"keywords": [],
+	"description": "🎂 (WIP) A modular visual novel/dialog system",
+	"author": "Umar Alfarouk <medrivia@gmail.com> (https://alfarouk.id)",
+	"homepage": "https://github.com/medrivia/hirari",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/medrivia/hirari.git"
+	},
+	"bugs": {
+		"url": "https://github.com/medrivia/hirari/issues"
+	},
+	"files": ["bin/*.{ts,js}", "utils/*.{ts,js}", "man/**/*.[1-9]"],
+	"bin": "./bin/hirari.ts",
+	"man": ["./man/man1/hirari.1"],
+	"main": "./bin/hirari.ts",
+	"types": "./bin/hirari.ts",
+	"exports": {
+		".": "./bin/hirari.ts"
+	},
+	"scripts": {
+		"b": "./man/generate.ts",
+		"build-exe": "bun build --compile --minify --sourcemap --bytecode ./bin/hirari.ts --outfile ./bin/hirari"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"remark-man": "^9.0.0",
+		"remark-parse": "^11.0.0",
+		"tsdown": "^0.13.0",
+		"unified": "^11.0.5"
+	},
+	"peerDependencies": {
+		"@hirari/core": "workspace:^",
+		"typescript": "^5.8.3"
+	}
+}
