@@ -23,7 +23,7 @@
 		".": "./bin/hirari.ts"
 	},
 	"scripts": {
-		"b": "./man/generate.ts",
+		"g": "./man/generate.ts",
 		"build-exe": "bun build --compile --minify --sourcemap --bytecode ./bin/hirari.ts --outfile ./bin/hirari"
 	},
 	"devDependencies": {

@@ -11,14 +11,7 @@ export const getParentDir = (path: string, level = 1): string => {
 	return nodePath.join(path, '../'.repeat(level))
 }
 
-/**
- * @summary Get this package/module root directory
- *
- * @remarks Be aware of trailing slash when returned
- */
-export const getProjectRoot = (): string => {
-	return getParentDir(Bun.resolveSync('./package.json', '.'))
-}
+const ROOT_DIR = getParentDir(Bun.resolveSync('./package.json', '.'))
 
 /**
  * @summary Throws error if one of supplied binaries is not found.
@@ -67,7 +60,7 @@ export const inlineFzf = async (
  */
 export const showMan = async (): Promise<void> => {
 	const proc = Bun.spawn(
-		['man', nodePath.join(getProjectRoot(), 'man/man1/hirari.1')],
+		['man', nodePath.join(ROOT_DIR, 'man/man1/hirari.1')],
 		{
 			stdout: 'inherit',
 		},

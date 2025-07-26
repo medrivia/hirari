@@ -50,6 +50,8 @@ jobs:
           bun-version: latest
       - run: bun i # install
         working-directory: packages/${{ inputs.pkg }}
+      - run: bun --if-present g # generate
+        working-directory: packages/${{ inputs.pkg }}
       - name: "Remove publishConfig"
         working-directory: packages/${{ inputs.pkg }}
         run: |
@@ -93,6 +95,8 @@ jobs:
           registry-url: "https://registry.npmjs.org/"
           scope: "@hirari"
       - run: bun i # install
+        working-directory: packages/${{ inputs.pkg }}
+      - run: bun --if-present g # generate
         working-directory: packages/${{ inputs.pkg }}
       - run: bun --if-present b # build
         working-directory: packages/${{ inputs.pkg }}
