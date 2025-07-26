@@ -61,7 +61,7 @@ jobs:
         working-directory: packages/${{ inputs.pkg }}
         run: |
           for symlink in $(find . -maxdepth 1 -type l); do
-          cp -f --remove-destination "$(realpath "$symlink")" "$symlink"
+          cp -r -f --remove-destination "$(realpath "$symlink")" "$symlink"
           done
       - name: "Fix workspace dependencies"
         run: bun ./scripts/fix-workspace-deps.ts
@@ -105,7 +105,7 @@ jobs:
         working-directory: packages/${{ inputs.pkg }}
         run: |
           for symlink in $(find . -maxdepth 1 -type l); do
-          cp -f --remove-destination "$(realpath "$symlink")" "$symlink"
+          cp -r -f --remove-destination "$(realpath "$symlink")" "$symlink"
           done
       - uses: actions/setup-node@v4
         with:
